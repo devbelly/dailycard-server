@@ -54,7 +54,7 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity register(@RequestBody @Validated CreateUserRequest request)
             throws Exception {
-
+        log.info("회원가입 {}", request.toString());
         return ResponseEntity.ok(userService.create(request));
     }
 
