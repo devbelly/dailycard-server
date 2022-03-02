@@ -79,7 +79,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/auth/add", "/api/user/checkEmailAvailability")
                 .permitAll()
                 .anyRequest()
-                .authenticated();
+                .permitAll();
 
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
